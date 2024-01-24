@@ -1,1 +1,244 @@
-test code
+[1/24, 11:35 AM] +91 84485 02061: <!DOCTYPE html>
+<html>
+<head>
+<link rel ="stylesheet" href="ui.css">
+  <title>COMPLAINT REGISTER </title>
+  </head>
+  <body>
+  <!-- header start -->
+  <div class="section1">
+    
+    <div class ="navbar">
+      <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">PAY BILL</a></li>
+        <li><a href="">REGISTER COMPLAINT</a></li>
+        <li><a href="">COMPLAINT STATUS</a></li>
+      </ul>
+	   </div>
+	  <div class="navbar2">
+      <span>Welcome</span><span>Anmol Rana</span>
+      <button class="logout-button">Logout<img src="image/1image.png" ></button>
+    </div>
+	</div>
+<!-- Header End-->  
+ 
+ <!-- Hero Part start-->
+ <div class ="heroheading">
+ <span>File New Complaint</span>
+ </div>
+ 
+ <div id ="main-container">
+ <div id ="container1"> 
+ <div class="drop">
+ <label for="issueDropdown"><span>Complaint/Service Type:</span></label>
+    <select id="issueDropdown" name="issueDropdown">
+      <option value="issue1">Issue 1</option>
+      <option value="issue2">Issue 2</option>
+      <option value="issue3">Issue 3</option>
+	 </select>
+  </div>
+  <div class= "drop2">
+    <label for="issueDropdown"><span>Category:</span></label>
+	 <select id="issueDropdown" name="issueDropdown">
+      <option value="issue1">Issue 1</option>
+      <option value="issue2">Issue 2</option>
+      <option value="issue3">Issue 3</option>
+	 </select>
+	 
+ </div>
+    <form class="CP">
+        <label>Contact Person:</label>
+          <input type="text" >
+        
+      </form>
+	<form class="MN">
+        <label>Mobile Number:</label>
+          <input type="text" >
+        
+      </form>
+	</div>
+<div class="container2">	
+	 <form>
+   <table>
+      <tr>
+          <td>Land Mark:</td>
+          <td><input type="text" name="firstname"></td>
+      </tr>
+      <tr>
+          <td>Consumer Number:</td>
+          <td><input type="text" name="lastname"></td>
+      </tr>
+	  <tr>
+          <td>Problem Description:</td>
+          <td><input type="text" name="lastname"></td>
+      </tr>
+	  <tr>
+          <td>Address:</td>
+          <td><input type="text" name="lastname"></td>
+      </tr>
+
+   </table>
+ </form>.
+</div>
+
+
+<!--Footer Start-->
+<div class="footer">
+        <button class="cancel" type="button">Cancel</button>
+        <button class="submit" type="submit">Submit</button>
+    </div>
+	  
+ </div>  
+	
+    
+  </body>
+  
+  
+</html>
+[1/24, 11:35 AM] +91 84485 02061: /**{
+	background-color:#E8E9EB;
+}*/
+
+.navbar{
+	background-color:#D3D3D3;
+	 padding-top: 8px;
+	 padding-bottom:8px;
+}
+.navbar ul li a {
+  background-color:#D3D3D3;
+  text-decoration: none;
+  margin:15px;
+ 
+}
+.navbar ul{
+	background-color:#D3D3D3;
+	text-align:center;
+	list-style-type:none;
+	padding:0;
+	
+}
+.navbar ul li{
+display:inline-block;}
+.navbar2{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px; 
+  margin-right:15px;
+  
+}
+.navbar2 span{
+	margin:5px;
+	
+}
+
+.logout-button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    background-color: #FF7722;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+	margin-left:15px;
+}
+.logout-button img{
+	margin-left:5px;
+	padding:none;
+	height:20px;
+	width:20px;
+}
+.heroheading{
+	background-color: #1338BE;
+	padding:15px;
+
+}
+.heroheading span{
+	color: #FFFFFF;
+	font-size:22px;
+	margin-left:15px;
+}
+.drop select {
+    height: 28px;
+    padding: 4px 15px;
+    line-height: 22px;
+    font-size: 15px;
+    width: 20%;
+}
+.drop span{
+	font-size:20px;
+}
+#container1{
+	margin-top:60px;
+	margin-left:60px
+}
+.drop2 select {
+    height: 28px;
+    padding: 4px 15px;
+    line-height: 22px;
+    font-size: 15px;
+    width: 22%;
+}
+.drop2 span{
+	font-size:20px;
+}
+.drop2 {
+    margin-top: 15px;
+    margin-top: 20px;
+    margin-left: 120px;
+}
+.CP  {
+	
+    margin-top: 26px;
+    margin-left: 84px;
+	
+}
+.CP input{
+	height: 20px;
+	width:21%;
+}
+.CP label{
+	font-size:18px;
+}
+.MN {
+	
+    margin-top: 90px;
+    margin-left: 74px;
+	
+}
+.MN input{
+	height: 20px;
+	width:21%;
+}
+.MN label{
+	font-size:18px;
+}
+.footer {
+           
+            text-align: center; /* Center-align the content within the footer */
+        }
+
+
+.footer button {
+            margin-left: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+			float:center;
+        }
+ .footer button.cancel {
+            background-color: #ccc;
+        }
+
+.footer button.submit {
+            background-color: #1338BE;
+	      padding:15px;
+         color: white;}
+.footer button:hover {
+            opacity: 0.8;
+} 
+#main-container{
+	display: flex;
+    flex-wrap: wrap;
+}
