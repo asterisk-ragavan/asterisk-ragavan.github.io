@@ -1,72 +1,63 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
+<!DOCTYPE html>
+<head>
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:pink;
+        }
+        header{
+            background-color:powderblue;
+      	    font-size:50px;
+            color: black;
+            padding:50px;
+            text-align:center;
+        }
 
-.welcome {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    margin: 0;
-}
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            flex-direction: column;
+        }
 
-input {
-    width: calc(100% - 20px); 
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+            text-align: center;
+        }
 
-.menu {
-    background-color: #4285f4;
-    color: #fff;
-    padding: 10px;
-}
+        .button {
+            padding: 50px 80px;
+            font-size: 25px;
+            text-decoration: none;
+            background-color:green;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
-.menu a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
+<header>ABC BANK</header>
+<hr>
 
-.menu a:hover {
-    text-decoration: underline;
-}
+<div class="container">
 
-.paymentdetails li {
-    margin-bottom: 10px;
-}
 
-button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px; 
-}
+    <div class="grid">
+        <a href="customer_reg.html" class="button">Customer Registration</a>
+        <a href="quickbill.html" class="button">Quick Bill </a>
+        <a href="paybill.html" class="button">Pay Bill</a>
+        <a href="complaints.html" class="button">Complaints</a>
+    </div>
+</div>
 
-button:hover {
-    background-color: #3458a7;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-form {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%;
-    box-sizing: border-box;
-    margin: auto;
-}
+</body>
+</html>
