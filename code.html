@@ -1,63 +1,59 @@
 <!DOCTYPE html>
-<head>
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color:pink;
-        }
-        header{
-            background-color:powderblue;
-      	    font-size:50px;
-            color: black;
-            padding:50px;
-            text-align:center;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 70vh;
-            flex-direction: column;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 50px;
-            text-align: center;
-        }
-
-        .button {
-            padding: 50px 80px;
-            font-size: 25px;
-            text-decoration: none;
-            background-color:green;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-
-<header>ABC BANK</header>
-<hr>
-
-<div class="container">
-
-
-    <div class="grid">
-        <a href="customer_reg.html" class="button">Customer Registration</a>
-        <a href="quickbill.html" class="button">Quick Bill </a>
-        <a href="paybill.html" class="button">Pay Bill</a>
-        <a href="complaints.html" class="button">Complaints</a>
+<html>
+  <head>
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Register New User</h2>
+    <h3>Consumer Details</h3>
+    <hr />
+    <div class="cus_details">
+      <label for="con_num">Consumer Number: </label>
+      <input type="text" placeholder="Consumer Number" id="con_num" />
+      <label for="con-num">Bill Number: </label>
+      <input type="number" placeholder="last 5 digits" id="con_num" />
     </div>
-</div>
-
-</body>
+    <br />
+    <h3>User Details</h3>
+    <hr />
+    <div class="user_details">
+      <div class="top">
+        <label for="con_num">Title:</label>
+        <select id="con_num">
+          <option value="item1">Please Select</option>
+          <option value="item2">item1</option>
+          <option value="item3">item2</option>
+          <option value="item4">item3</option>
+        </select>
+        <label for="con_num">Name:</label>
+        <input type="text" id="con_num" placeholder="Enter your Name" />
+      </div>
+      <div class="bottom">
+        <label for="con_num">Email Id: </label>
+        <input type="email" id="con_num" placeholder="Email address" />
+        <label for="con_num"> Mobile Number: </label>
+        <input type="tel" placeholder="Mobile Number" id="con_num" />
+      </div>
+    </div>
+    <h3>Login Details</h3>
+    <hr />
+    <div class="login_details">
+      <div class="top1">
+        <label for="con_num">User Id: </label>
+        <input type="text" id="con_num" />
+      </div>
+      <div class="bottom1">
+        <label for="con_num">Password: </label>
+        <input type="password" id="con_num" />
+        <br />
+        <label for="con_num"> Confirm Password: </label>
+        <input type="password" id="con_num" />
+      </div>
+    </div>
+    <div class="button">
+      <input type="submit" placeholder="Register" id="submit" />
+      <input type="reset" placeholder="Reset" id="reset" />
+    </div>
+  </body>
 </html>
