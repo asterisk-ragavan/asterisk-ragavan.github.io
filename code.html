@@ -1,26 +1,48 @@
-awk ' BEGIN{FS = "|";count=0;}
-    {
-        if ( $7 == "Active")
-        count += 1
-    }
-    END{print count}' Complaints.txt
+CREATE Table Customer(
+    ConsumerID varchar(13) PRIMARY KEY,
+    CustomerName VARCHAR(50),
+    Email VARCHAR(50),
+    MobileNumber varchar(10),
+    UserID VARCHAR(20) CHECK (LENGTH(UserID) BETWEEN 5 AND 20),
+    Password VARCHAR(30),
+    ConfirmPassword VARCHAR(30),
+    Status VARCHAR(10) CHECK (Status IN ('Active', 'Inactive'))
+);
+
+Insert into Customer values('1234567890001','Ajay','Ajay@gmail.com','1234567890','Ajay1','Ajay@123','Ajay@123','Active');
+Insert into Customer values('1234567890002','Aman','Aman@gmail.com','1234567891','Aman1','Aman@123','Aman@123','Inactive');
+Insert into Customer values('1234567890003','Sunil','Sunil@gmail.com','1234567892','Sunil2','Sunil@123','Sunil@123','Inactive');
+Insert into Customer values('1234567890004','Tarun','Tarun@gmail.com','1234567893','Tarun2','Tarun@123','Tarun@123','Active');
+Insert into Customer values('1234567890005','Kuldeep','Kuldeep@gmail.com','1234567894','Kuldeep2','Kuldeep@123','Kuldeep@123','Inactive');
 
 
-awk ' BEGIN{FS = "|"; found = 0}
-    {
-        if ($1 == "110113249078"){
-            print $1,$2,$5
-            found = 1}
-    }
-    END{if (found==0) print "Not Found"}'
+Select consumerID,customerName,email from Customer where customerName like 'A%' order by customerName DESC;
 
+Create Table consumerBill(
+    consumerID varchar(13),
+    customerName varchar(50),
+    address varchar(225),
+    city varchar(20),
+    billNumber varchar(5)
+);
 
+Insert into consumerBill values('1234567890001','Ajay','abcd','varanasi',1234);
+Insert into consumerBill values('1234567890002','Aman','abce','Ghazipur',1254);
+Insert into consumerBill values('123456789045','Abhay','abcd','varanasi',1264);
+Insert into consumerBill values('123456789076','Ajay','abcd','varanasi',1234);
+Insert into consumerBill values('1234567890005','Kuldeep','abdr','Delhi',5645);
+Insert into consumerBill values('123456789061','ABcd','abcd','varanasi',8234);
+Insert into consumerBill values('123456789081','Ajay','abcd','Delhi',1234);
+Insert into consumerBill values('123456789401','Arya','abcd','varanasi',1634);
+Insert into consumerBill values('123456789301','Anuj','abcd','Meerut',1434);
+Insert into consumerBill values('123456789091','DDE','abcd','Goa',4234);
 
-awk ' BEGIN{FS = "|"; found = 0;OFS = "|"}
-    {
-        count = 0
-        for (i=3;i<=NF;++i)
-        count += $i;
-        print $1,$2,count/4
-    }
-    END{}'  | sort -t '|' -k3,3r
+select *from consumerBill;
+
+select Customer.consumerID,Customer.customerName,Customer.mobileNumber,consumerBill.billNumber AS Amount,consumerBill.address,consumerBill.city 
+from consumerBill INNER JOIN Customer ON Customer.consumerID=consumerBill.consumerID;
+
+select Customer.consumerID,Customer.customerName,Customer.mobileNumber,consumerBill.billNumber AS Amount,consumerBill.address,consumerBill.city 
+from Customer INNER JOIN consumerBill ON Customer.consumerID=consumerBill.consumerID  where Customer.status='Active';
+
+Select Avg(billNumber) AS avgBill,city from consumerBill group by city;
