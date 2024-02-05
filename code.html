@@ -1,59 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Customer Registration</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h2>Register New User</h2>
-    <h3>Consumer Details</h3>
-    <hr />
-    <div class="cus_details">
-      <label for="con_num">Consumer Number: </label>
-      <input type="text" placeholder="Consumer Number" id="con_num" />
-      <label for="con-num">Bill Number: </label>
-      <input type="number" placeholder="last 5 digits" id="con_num" />
-    </div>
-    <br />
-    <h3>User Details</h3>
-    <hr />
-    <div class="user_details">
-      <div class="top">
-        <label for="con_num">Title:</label>
-        <select id="con_num">
-          <option value="item1">Please Select</option>
-          <option value="item2">item1</option>
-          <option value="item3">item2</option>
-          <option value="item4">item3</option>
-        </select>
-        <label for="con_num">Name:</label>
-        <input type="text" id="con_num" placeholder="Enter your Name" />
-      </div>
-      <div class="bottom">
-        <label for="con_num">Email Id: </label>
-        <input type="email" id="con_num" placeholder="Email address" />
-        <label for="con_num"> Mobile Number: </label>
-        <input type="tel" placeholder="Mobile Number" id="con_num" />
-      </div>
-    </div>
-    <h3>Login Details</h3>
-    <hr />
-    <div class="login_details">
-      <div class="top1">
-        <label for="con_num">User Id: </label>
-        <input type="text" id="con_num" />
-      </div>
-      <div class="bottom1">
-        <label for="con_num">Password: </label>
-        <input type="password" id="con_num" />
-        <br />
-        <label for="con_num"> Confirm Password: </label>
-        <input type="password" id="con_num" />
-      </div>
-    </div>
-    <div class="button">
-      <input type="submit" placeholder="Register" id="submit" />
-      <input type="reset" placeholder="Reset" id="reset" />
-    </div>
-  </body>
-</html>
+awk ' BEGIN{FS = "|";count=0;}
+    {
+        if ( $7 == "Active")
+        count += 1
+    }
+    END{print count}' Complaints.txt
+
+
+awk ' BEGIN{FS = "|"; found = 0}
+    {
+        if ($1 == "110113249078"){
+            print $1,$2,$5
+            found = 1}
+    }
+    END{if (found==0) print "Not Found"}'
+
+
+
+awk ' BEGIN{FS = "|"; found = 0;OFS = "|"}
+    {
+        count = 0
+        for (i=3;i<=NF;++i)
+        count += $i;
+        print $1,$2,count/4
+    }
+    END{}'  | sort -t '|' -k3,3r
